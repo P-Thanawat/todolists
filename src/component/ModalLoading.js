@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
 import { triggerContxet } from '../context/triggerContext';
