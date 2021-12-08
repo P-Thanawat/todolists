@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useMutation, gql, useLazyQuery } from "@apollo/client";
+import React, { useContext, useState } from 'react'
+import { gql, useLazyQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { setToken } from '../service/localStorage';
 import { triggerContxet } from '../context/triggerContext';
@@ -17,7 +17,7 @@ function Login() {
   }
   `;
 
-  const [login, { loading, error, data }] = useLazyQuery(LOGIN_USER, {
+  const [login] = useLazyQuery(LOGIN_USER, {
     onCompleted: data => {
       setTrigModal(false)
       console.log(`token`, data.login.token)

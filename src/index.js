@@ -8,27 +8,27 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
+
 } from "@apollo/client";
-import { setContext } from '@apollo/client/link/context';
+// import { setContext } from '@apollo/client/link/context';
 import { WebSocketLink } from "@apollo/client/link/ws";
 import { TriggerContextProvider } from './context/triggerContext';
 
-const httpLink = createHttpLink({
-  uri: 'https://dear-monitor-91.hasura.app/v1/graphql',
-});
+// const httpLink = createHttpLink({
+//   uri: 'https://dear-monitor-91.hasura.app/v1/graphql',
+// });
 
 const token = localStorage.getItem('token');
-const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  // return the headers to the context so httpLink can read them
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : "",
-    }
-  }
-});
+// const authLink = setContext((_, { headers }) => {
+//   // get the authentication token from local storage if it exists
+//   // return the headers to the context so httpLink can read them
+//   return {
+//     headers: {
+//       ...headers,
+//       authorization: token ? `Bearer ${token}` : "",
+//     }
+//   }
+// });
 
 const client = new ApolloClient({
   uri: 'https://dear-monitor-91.hasura.app/v1/graphql',

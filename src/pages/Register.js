@@ -18,7 +18,7 @@ function Register() {
   }
   `;
 
-  const [register, { loading, error, data }] = useMutation(REGISTER_USER, {
+  const [register] = useMutation(REGISTER_USER, {
     onCompleted: data => {
       setTrigModal(false)
       console.log(`data`, data)
