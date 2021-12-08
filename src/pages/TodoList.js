@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useSubscription, } from "@apollo/client";
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { user } from '../service/localStorage'
 import Navbar from "../component/Navbar";
 import AddTodo from "../component/AddTodo";
@@ -28,12 +28,13 @@ function TodoList() {
     }
   });
 
+  const run = useCallback(() => {
+    setTrigModal(true)
+  }, [])
+
   useEffect(() => {
-    const run = () => {
-      setTrigModal(true)
-    }
     run();
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [])
 
 
   return (
