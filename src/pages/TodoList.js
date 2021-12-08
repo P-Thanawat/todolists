@@ -32,9 +32,9 @@ function TodoList() {
     setTrigModal(true)
   }, [])
 
-  useEffect(() => {
+  useEffect((run = run) => {
     run();
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
 
   return (
