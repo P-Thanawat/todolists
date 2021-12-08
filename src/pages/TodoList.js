@@ -28,9 +28,9 @@ function TodoList() {
     }
   });
 
-  // useEffect(() => {
-  //   setTrigModal(true)
-  // }, [])
+  useEffect(() => {
+    setTrigModal(true)
+  }, [])
 
 
   return (
