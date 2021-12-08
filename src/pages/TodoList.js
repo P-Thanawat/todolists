@@ -28,9 +28,11 @@ function TodoList() {
     }
   });
 
-  //eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    setTrigModal(true)
+    const run = () => {
+      setTrigModal(true)
+    }
+    run();
   }, [])
 
 
